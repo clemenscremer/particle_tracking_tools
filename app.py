@@ -59,8 +59,25 @@ df, lat_center, lon_center = read_track(xmlname)
 
 # page
 st.header("Particle Tracking Demo")
+st.markdown("This app exemplarily shows the release of particles (around timestep 0) and their subsequent movement with the flow of the Elbe river. Particles are released in a 30 m x 30 m area.")
+st.markdown("-----")
 
-ts_selection = st.sidebar.radio("Timestep selection:", ["Hover", "Click"])
+ts_selection = st.sidebar.radio("Manual timestep selection:", ["Hover", "Click"])
+
+with st.sidebar.expander("Particle release (not implemented)"):
+    st.selectbox("Uncertainty in release location", ('1 m', '10 m', '50 m', '100 m'))
+    st.selectbox("Uncertainty in release time", ('1 min', '10 min', '60 min'))
+    particle_type = st.select_slider("type of particle", ["Person", "Contaminant"])
+    if particle_type == "Person":
+        st.markdown("Person attributes")
+        particle_activity = st.select_slider("active/passive", ["passive", "active"]) 
+        st.selectbox("Person", ('child', 'average'))
+
+    else:
+        particle_activity = "passive" # this could determine dispersion ~= swimming
+        st.markdown("**Contaminant attributes**")
+        st.selectbox("Contaminant", ('oil', 'fat', 'miscible'))
+
 
 tab1, tab2 = st.tabs(["Manual selection", "Animated"])
 with tab1:
