@@ -1,6 +1,6 @@
 streamlit
 mikeio
-pandas
+pandas==1.5.0
 numpy
 pyproj
 plotly
