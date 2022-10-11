@@ -1,0 +1,7 @@
+- streamlit
+- mikeio
+- pandas
+- numpy
+- pyproj
+- plotly
+- streamlit_plotly_events
