@@ -137,10 +137,8 @@ with st.sidebar.expander("Particle release (not implemented)"):
     
 
     st.markdown("injection coordinates (*picking from map should also be an option*")
-    if sel_coords is not None:
-        xsb, ysb = lat_center, lon_center
-    else:
-        xsb, ysb = sel_x, sel_y
+    xsb, ysb = lat_center, lon_center
+    #xsb, ysb = sel_x, sel_y # take from map
 
     st.number_input("latitude: ",value = xsb)
     st.number_input("longitude: ",value = ysb)
