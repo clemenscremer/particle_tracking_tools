@@ -65,7 +65,7 @@ st.markdown("-----")
 ts_selection = st.sidebar.radio("Manual timestep selection:", ["Hover", "Click"])
 
 with st.sidebar.expander("Particle release (not implemented)"):
-    st.markdown("injection coordinates")
+    st.markdown("injection coordinates (*picking from map should also be an option*")
     st.number_input("latitude: ",value=lat_center)
     st.number_input("longitude: ",value=lon_center)
 
