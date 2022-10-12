@@ -65,8 +65,12 @@ st.markdown("-----")
 ts_selection = st.sidebar.radio("Manual timestep selection:", ["Hover", "Click"])
 
 with st.sidebar.expander("Particle release (not implemented)"):
-    st.selectbox("Uncertainty in release location", ('1 m', '10 m', '50 m', '100 m'))
-    st.selectbox("Uncertainty in release time", ('1 min', '10 min', '60 min'))
+    st.markdown("injection coordinates")
+    st.number_input("latitude: ",value=lat_center)
+    st.number_input("longitude: ",value=lon_center)
+
+    st.selectbox("uncertainty in release location", ('1 m', '10 m', '50 m', '100 m'))
+    st.selectbox("uncertainty in release time", ('1 min', '10 min', '60 min'))
     particle_type = st.select_slider("type of particle", ["Person", "Contaminant"])
     if particle_type == "Person":
         st.markdown("Person attributes")
