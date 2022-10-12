@@ -106,6 +106,7 @@ with tab1:
     except IndexError:
         selected_ts = 0
 
+    st.subheader("Map of particle distribution")
     st.write(f"selected timestep: {selected_ts} minutes after particle injection")
 
 
